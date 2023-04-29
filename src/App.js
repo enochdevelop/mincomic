@@ -1,4 +1,4 @@
-import React, { Suspense, useRef, useState, useEffect } from "react";
+import React, { Suspense, useRef, useState} from "react";
 import { Canvas, useThree } from '@react-three/fiber';
 import {OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import "./style.css";
@@ -6,21 +6,14 @@ import "./button.css";
 import { RoomScene, Popup } from "./Room";
 import { NavigationCircle, NavigationCircleRight, NavigationCircleLeft } from './Navigation.js';
 import { gsap } from "gsap";
-import * as THREE from 'three';
 import Lottie from 'react-lottie';
 import pencilAnimation from './142617-creative-loading-icon.json';
 import "./loader.css";
-/*
-import { Bloom, ChromaticAberration, EffectComposer } from "@react-three/postprocessing";
-import { BlendFunction } from "postprocessing";
-*/
 
 
 function Room(){
   const cameraRef = useRef();
   const { camera } = useThree();
-  const [cameraPosition, setCameraPosition] = useState([7.6, 2.5, 0]);
-  const [cameraRotation, setCameraRotation] = useState([-1.57, 1.3, 1.57]);
 
   const [showNavigation, setShowNavigation] = useState(true);
 
@@ -29,7 +22,6 @@ function Room(){
   const [isDragging, setIsDragging] = useState(false);
   const previousMousePositionRef = useRef({ x: 0, y: 0 });
 
-  const texture = new THREE.TextureLoader().load("images/paper3.jpg");
 
 
   const handleCircleClick = (position, rotation) => {
@@ -52,8 +44,6 @@ function Room(){
 
       });
 
-      setCameraPosition(position);
-      setCameraRotation(rotation);
 
       if (setShowNavigation){
         //setShowNavigation(false);
@@ -83,7 +73,7 @@ function Room(){
       return;
     }
     const { clientX, clientY } = event;
-    const { x: previousX, y: previousY } = previousMousePositionRef.current;
+    const { x: previousX } = previousMousePositionRef.current;
     const deltaX = clientX - previousX;
     cameraRef.rotation.y -= deltaX * 0.01;
     previousMousePositionRef.current = {

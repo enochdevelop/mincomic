@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState} from "react";
-import { useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { Mesh } from 'three';
 import { gsap } from "gsap";
@@ -15,42 +14,46 @@ import emailjs from "@emailjs/browser";
 let popup_open = false;
 
 export function RoomScene() {
-
-  const gltfLoader = new GLTFLoader();
-  const models = [
-    "models/room04_26.glb",
-    "models/chair04_20.glb",
-    "models/shelf04_26.glb",
-    "models/computer04_20.glb",
-    "models/laptop04_20.glb",
-    "models/computerscreen_4_26.glb",
-    "models/laptopscreen_4_26.glb",
-    "models/projectposter2.1.glb",
-    "models/desk04_26.glb",
-    "models/project1_4_26.glb",
-    "models/project2_4_26.glb",
-    "models/project3_4_26.glb",
-    "models/project4_4_26.glb",
-    "models/project5_4_26.glb",
-    "models/project6_4_26.glb",
-    "models/project7_4_26.glb",
-    "models/project8_4_26.glb",
-    "models/project9_4_26.glb",
-    "models/projectextra_4_26.glb",
-    "models/git04_26.glb",
-    "models/snap04_26.glb",
-    "models/linked04_26.glb"
-  ];
   
   const [gltf, setGltf] = useState([]);
-  
+  const modelRefs = useRef([]);
+
   useEffect(() => {
+    const gltfLoader = new GLTFLoader();
+    const models = [
+      "models/room04_26.glb",
+      "models/chair04_20.glb",
+      "models/shelf04_26.glb",
+      "models/computer04_20.glb",
+      "models/laptop04_20.glb",
+      "models/computerscreen_4_26.glb",
+      "models/laptopscreen_4_26.glb",
+      "models/projectposter2.1.glb",
+      "models/desk04_26.glb",
+      "models/project1_4_26.glb",
+      "models/project2_4_26.glb",
+      "models/project3_4_26.glb",
+      "models/project4_4_26.glb",
+      "models/project5_4_26.glb",
+      "models/project6_4_26.glb",
+      "models/project7_4_26.glb",
+      "models/project8_4_26.glb",
+      "models/project9_4_26.glb",
+      "models/projectextra_4_26.glb",
+      "models/git04_26.glb",
+      "models/snap04_26.glb",
+      "models/linked04_26.glb"
+    ];
+    
     Promise.all(models.map(model => gltfLoader.loadAsync(process.env.PUBLIC_URL + model)))
       .then(setGltf);
+
+    return () => {
+      // Clean up the gltfLoader instance when the component unmounts
+      gltfLoader.dispose();
+    };
   }, []);
   
-  
-  const modelRefs = useRef([]);
 
   useEffect(() => {
     modelRefs.current = gltf.map((g) => {
@@ -100,12 +103,7 @@ export function RoomScene() {
       }
     };
 
-    //.52
-    //.5
-    
-    const getSize = (index) => {
-      console.log(modelRefs.current[index].scale);
-    };
+
 
     const handleMouseLeave = (index, x_pos, y_pos, z_pos) => {
       if (modelRefs.current) {
@@ -224,6 +222,7 @@ export const Popup = () => {
   const stopVideo = (iframeId) => {
     const iframeToStop = document.getElementById(iframeId);
     if (iframeToStop) {
+      // eslint-disable-next-line
       iframeToStop.src = iframeToStop.src;
     } 
       document.querySelectorAll('video').forEach(v => { v.pause() });
