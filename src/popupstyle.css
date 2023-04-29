@@ -1,0 +1,106 @@
+@font-face {
+  font-family: 'Fredericka the Great';
+  src: url(./Fonts/FrederickatheGreat-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: "Parisian"; 
+  src: url(./Fonts/Parisian.ttf) format("truetype");
+  src: url(./Fonts/Parisian.eot);
+  src: url(./Fonts/Parisian.woff) format("woff"),
+  url(./Fonts/Parisian.woff2) format("woff2"),
+  url(./Fonts/Parisian.svg#filename) format("svg");
+}
+
+@font-face {
+  font-family: "helvetica"; 
+  src: url(./Fonts/helvetica-light-587ebe5a59211.ttf) format("truetype");
+}
+
+.popup {
+    z-index: 9999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 70%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: rgba(175, 152, 137, 0.63);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s;
+    align-items: center;
+    overflow: hidden;
+    /* border-radius: 20px; */
+    overflow-y: auto;
+
+  }
+
+  .contact-popup {
+    z-index: 9999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: rgba(175, 152, 137, 0.63);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s;
+    align-items: center;
+    overflow: hidden;
+    /* border-radius: 20px; */
+    overflow-y: auto;
+
+  }
+
+.popup-screen{
+    z-index: 3;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    width: 100vw;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    animation: fadeIn 2s;
+  }
+  
+
+.popup h2 {
+    margin-top: 10;
+    font-family: "Parisian" ;
+    font-weight: 200;
+    font-size: 4em;
+    line-height: 1;
+  }
+
+  .popup h3 {
+    margin-top: 10;
+    font-family: "Parisian" ;
+    font-weight: 200;
+    font-size: 2em;
+    line-height: 1;
+  }
+  
+  
+.popup img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+.popup > div{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    }
+
+
+.popup::-webkit-scrollbar{
+    display: none;
+    }
+
+

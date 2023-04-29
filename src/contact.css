@@ -1,0 +1,96 @@
+.email_design_container {
+    width: 100%;
+    max-height: 900px;
+  }
+  
+  .email_content{
+    margin-top: 20px;
+  }
+  .email_design_container p {
+    font-family: "Parisian" ;
+    font-size: 15px;
+    color: darkgoldenrod;
+  }
+
+  .email_design_container form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .email_design_container input {
+      width: 80%;
+      height: 45px;
+      outline: none;
+      font-size: 15px;
+      border: 1px solid rgb(220, 220, 220);
+  }
+
+  .email_design_container textarea {
+    max-width: 80%;
+    min-width: 30%;
+    width: 100%;
+    max-height: 100px;
+    min-height: 100px;
+    font-size: 15px;
+    outline: none;
+    border: 1px solid rgb(220, 220, 220);
+  }
+
+  .email_design_container label {
+    margin-top: 1rem;
+    
+  }
+
+  .email_design_container input[type="submit"] {
+    margin-top: 2rem;
+    cursor: pointer;
+    background: darkgoldenrod;
+    color: white;
+    border: none;
+  }
+
+
+  .name_text{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.4);
+  }
+
+   .email_text {
+    margin: 20px 0px;
+    box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.4);
+  }
+  
+  .message_text{
+    margin: 20px 0px;
+    box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.4);
+  }
+
+  .submit_text{
+    box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .submit_text.scale-in {
+    transform: scale(0.9);
+  }
+
+  .icon_content{
+    width: 100%;
+    height: 10%;
+  }
+
+  @media screen and (min-device-width: 40px) and (max-device-width: 800px){
+
+      .email_design_container input {
+        width: 90%;
+      }
+    
+      .email_design_container textarea {
+        max-width: 90%;  
+      }
+    
+  }

@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Avenir+Next&display=swap');
+
+html, body, #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+ul.list {
+  list-style-type: circle;
+  text-align: left;
+  margin: auto;
+  padding: auto;
+  width: 100%;
+
+  font-family: "-apple-system", sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+}
+
+#main-page{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0;
+    z-index: 3;
+    display: none;
+}
+
+#main-canvas{
+  background-image: url("./paper3.jpg");
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  pointer-events: none;
+  opacity: 0.3;
+  z-index: 9999;
+}
+
+  @keyframes fadeIn {
+    0% { opacity: 0;}
+    100% { opacity: 1; }
+  }
+  
+  @keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0;}
+    
+  }
+  
+#back-button1{
+  position: absolute;
+  top: 30px; 
+  left: 30px; 
+  z-index: 1;
+  width: 200px;
+  height: 40px;
+  display: none;
+  animation: fadeIn 2s;
+}
+
+.spacer{
+  top: 20px; 
+  height: 10%;
+}
+
+.spacer-skills{
+  top: 20px; 
+  height: 5%;
+}
+
+.title-section {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.close-btn {
+	background-color: transparent;
+	border: none;
+	font-size: 20px;
+	cursor: pointer;
+  z-index: 9999;
+}
+
+.video-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: auto;
+  
+}
+
+.video-section iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  /* border-radius: 20px; */
+  box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.7);
+}
+
+.video-section video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.7);
+}
+
+
+.description-section {
+	margin: 20px 0;
+  font-family: "-apple-system", sans-serif;
+  font-weight: lighter;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+}
+
+.skills-section {
+	display: flex;
+	flex-wrap: wrap;
+  flex-direction: row;
+	margin-top: 20px;
+  font-family: "-apple-system", sans-serif;
+  font-weight: lighter;
+  font-size: 15px;
+}
+
+.skill {
+	padding: 5px 10px;
+	margin-right: 10px;
+  margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: #eee;
+	border-radius: 5px;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0;}
+  100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0;}
+  
+}
