@@ -6,6 +6,7 @@ import "./button.css";
 import { RoomScene, Popup } from "./Room";
 import { NavigationCircle, NavigationCircleRight, NavigationCircleLeft } from './Navigation.js';
 import { gsap } from "gsap";
+import {Helmet} from "react-helmet";
 import Lottie from 'react-lottie';
 import pencilAnimation from './142617-creative-loading-icon.json';
 import "./loader.css";
@@ -243,6 +244,12 @@ function App() {
 
   return (
     <Suspense fallback={fallCallback()}>
+      <Helmet>
+          <meta charSet="utf-8" />
+          <title>mincomicsdesign</title>
+          <link rel="canonical" href="http://mysite.com/example" />
+          <meta name="description" content="mincomicsdesign lobby" />
+      </Helmet>
       <button id="back-button">Go Back</button>     
         <Popup />
         <div className="canvas-container">
