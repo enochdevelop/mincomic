@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useMemo, lazy,  Suspense, useState} from "react";
-import { useLoader } from '@react-three/fiber';
+import React, { useEffect, useRef, useState} from "react";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { Mesh } from 'three';
 import { gsap } from "gsap";
