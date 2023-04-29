@@ -104,3 +104,6 @@
     }
 
 
+.contact-popup::-webkit-scrollbar{
+  display: none;
+  }
