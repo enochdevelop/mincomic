@@ -39,6 +39,8 @@
   z-index: 0;
   opacity: 1;
   animation: none;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 
