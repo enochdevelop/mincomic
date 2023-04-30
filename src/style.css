@@ -5,7 +5,10 @@ html, body, #root, canvas {
     height: 100%;
     margin: 0;
     overflow: hidden;
-    overflow-y: auto;
+}
+
+canvas {
+  overflow-y: auto;
 }
 
 ul.list {
