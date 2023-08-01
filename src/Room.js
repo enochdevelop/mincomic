@@ -42,7 +42,8 @@ export function RoomScene() {
       "models/projectextra_4_26.glb",
       "models/git04_26.glb",
       "models/snap04_26.glb",
-      "models/linked04_26.glb"
+      "models/linked04_26.glb",
+      "models/floordesign.glb"
     ];
     
     Promise.all(models.map(model => gltfLoader.loadAsync(process.env.PUBLIC_URL + model)))
@@ -169,6 +170,7 @@ export function RoomScene() {
 
         <primitive object={gltf[21].scene} onClick={() => {window.open("https://www.linkedin.com/in/enoch-ajagbe/", "_blank");}} 
          onPointerEnter={() => handleMouseEnter(21, .507, .507, .507)} onPointerLeave={() => handleMouseLeave(21, .5, .5, .5)}/> 
+         <primitive object={gltf[21].scene} />
     </> 
     );
    

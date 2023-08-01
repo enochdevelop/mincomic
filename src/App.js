@@ -82,6 +82,7 @@ function Room(){
       y: clientY,
     };
   };
+  
 
   const resetCircleClick = () => {
     const def_position = [7.6, 2.5, 0];
@@ -166,15 +167,15 @@ function Room(){
         </EffectComposer>
     */}
       {showNavigation && (
-        <NavigationCircle position={[-2, 0, 0]} onClick={() => handleCircleClick([3, 3, 0], [-1.57, 1.5, 1.57])} className="rounded-plane" /> 
+        <NavigationCircle position={[-2, 0, 0]} onClick={() => handleCircleClick([3, 3, 0], [-1.57, 1.5, 1.57])} className="nav-circle1" /> 
       )}
   
       {showNavigation && (
-        <NavigationCircleLeft position={[-2, 0, 1.2]} onClick={() => handleCircleClick([3, 3, 0], [deg2rad(0), deg2rad(160), deg2rad(0)])} className="rounded-plane-left" /> 
+        <NavigationCircleLeft position={[-2, 0, 1.2]} onClick={() => handleCircleClick([3, 3, 0], [deg2rad(0), deg2rad(160), deg2rad(0)])}  className="nav-circle" /> 
       )}
   
       {showNavigation && (
-        <NavigationCircleRight position={[-2, 0, -1.2]} onClick={() => handleCircleClick([1.77, 2, -1.1], [deg2rad(-20), deg2rad(20), deg2rad(5)])} className="rounded-plane-right" /> 
+        <NavigationCircleRight position={[-2, 0, -1.2]} onClick={() => handleCircleClick([1.77, 2, -1.1], [deg2rad(-20), deg2rad(20), deg2rad(5)])} className="nav-circle"/> 
       )}
   
       </>
@@ -231,6 +232,7 @@ function App() {
     setTimeout(function() {
       const loadingFall = document.querySelector('.loading-fallback');
       const canvasChild = document.querySelector('#canvas-child');
+      const navCircles = document.querySelector('.rounded-plane');
       if (loadingFall){
         loadingFall.style.display = "none";
       }
@@ -238,6 +240,8 @@ function App() {
       if (canvasChild){
         canvasChild.style.animation = "fade-in 2s";
       }
+
+
     }, 5000);
   }
 

@@ -43,6 +43,11 @@
   overflow-y: auto;
 }
 
+.nav-circle {
+  opacity: 0;
+  display: none;
+  animation: none;
+}
 
 /* 
 .room.fade-in {
