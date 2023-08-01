@@ -232,7 +232,7 @@ function App() {
     setTimeout(function() {
       const loadingFall = document.querySelector('.loading-fallback');
       const canvasChild = document.querySelector('#canvas-child');
-      const navCircles = document.querySelector('.rounded-plane');
+      //const navCircles = document.querySelector('.rounded-plane');
       if (loadingFall){
         loadingFall.style.display = "none";
       }
